@@ -1,0 +1,9 @@
+{
+  "platformName": "Android",
+  "platformVersion": "9",
+  "deviceName": "emulator-5554",
+  "automationName": "UiAutomator2",
+  "appPackage": "com.claudivan.taskagenda",
+  "appActivity": ".Activities.MainActivity",
+  "appiumServerUrl": "http://localhost:4723"
+}
