@@ -1,6 +1,6 @@
 {
   "platformName": "Android",
-  "platformVersion": "9",
+  "platformVersion": "13",
   "deviceName": "emulator-5554",
   "automationName": "UiAutomator2",
   "appPackage": "com.claudivan.taskagenda",
