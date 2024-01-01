@@ -3,6 +3,9 @@ package logic;
 import infra.BasePage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -38,5 +41,11 @@ public class MainPage extends BasePage {
     public String pendingEvents(){
         this.pendingEvents=driver.findElementById(PENDING_EVENTS);
         return this.pendingEvents.getText();
+    }
+    public void clickOnPendingEvents(){
+//        WebDriverWait wait = new WebDriverWait(driver, 10);
+//        wait.until(ExpectedConditions.elementToBeClickable(By.id(pendingEvents())));
+        this.pendingEvents=driver.findElementById(PENDING_EVENTS);
+        this.pendingEvents.click();
     }
 }

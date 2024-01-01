@@ -4,6 +4,8 @@ import infra.AppiumDriverProvider;
 import infra.TestContext;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import jdk.jfr.Event;
+import logic.Events;
 import logic.MainPage;
 import logic.NewEventPage;
 import org.junit.jupiter.api.BeforeAll;
@@ -43,5 +45,21 @@ public class TaskAppTest {
         newEventPage.saveEvent();
 
         assertNotEquals("NO PENDING EVENT", mainPage.pendingEvents());
+    }
+    @Test
+    public void deleteEvent(){
+        //arrange
+        String eventName="new event";
+        MainPage mainPage=new MainPage(driver);
+        mainPage.clickOnAddEventButton();
+        mainPage.chooseTomorrow();
+        NewEventPage newEventPage=new NewEventPage(driver);
+        newEventPage.setEventName(eventName);
+        newEventPage.saveEvent();
+        mainPage.clickOnPendingEvents();
+        Events events=new Events(driver);
+        events.clickOnEvent(eventName);
+        events.clickOnDelete();
+
     }
 }
